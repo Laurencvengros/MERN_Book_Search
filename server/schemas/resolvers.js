@@ -48,11 +48,11 @@ const resolvers = {
             }
             throw new AuthenticationError('Please login first');
         },
-        removeBook: async (parent, { bookId }, context) =>{
+        removeBook: async (parent, args, context) =>{
             if(context.user){
                 const updatedUser = await User.findOneAndUpdate(
                     {_id: context.user._id},
-                    {$pull : {savedBooks: bookId}},
+                    { $pull: { savedBooks: { bookId: args.bookId } } },
                     {new: true, runValidators: true},
                 );
                 return updatedUser
