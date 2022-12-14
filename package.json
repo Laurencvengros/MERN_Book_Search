@@ -1,6 +1,9 @@
 {
-  "name": "googlebooks-app",
+  "name": "mern_book_search",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
   "description": "",
   "main": "server/server.js",
   "scripts": {
